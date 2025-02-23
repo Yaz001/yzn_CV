@@ -3,10 +3,11 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  /* iOS system font stack */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+  background-color: #f7f7f7;
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
@@ -18,10 +19,10 @@ body {
 
 /* Header */
 header {
-  background: rgba(44, 62, 80, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  padding: 15px 0;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -34,7 +35,8 @@ header {
 .logo {
   margin: 0;
   padding: 0 20px;
-  color: white;
+  font-size: 1.8em;
+  color: #007aff; /* iOS blue accent */
 }
 nav {
   display: flex;
@@ -51,12 +53,12 @@ nav {
 }
 .nav-links a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #333;
+  font-weight: 500;
   transition: color 0.3s;
 }
 .nav-links a:hover {
-  color: #1abc9c;
+  color: #007aff;
 }
 .dark-mode-toggle {
   margin: 0 20px;
@@ -64,11 +66,11 @@ nav {
   border: none;
   font-size: 1.2em;
   cursor: pointer;
+  color: #007aff;
   transition: color 0.3s;
-  color: white;
 }
 .dark-mode-toggle:hover {
-  color: #1abc9c;
+  color: #0051a8;
 }
 
 /* Hero Section */
@@ -76,30 +78,28 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background-color: #fff;
   border-radius: 15px;
   margin: 30px auto;
   max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   animation: fadeIn 1.5s ease-in-out;
 }
 .hero-text h2 {
-  font-size: 2.5em;
-  color: #34495e;
+  font-size: 2.8em;
+  color: #333;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 .hero-text .highlight {
-  color: #1abc9c;
-  font-weight: bold;
+  color: #007aff;
 }
 .hero-text p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin-bottom: 30px;
-}
-.buttons .btn {
-  margin: 10px;
+  line-height: 1.5;
 }
 
 /* Button Styles */
@@ -107,27 +107,27 @@ nav {
   display: inline-block;
   padding: 12px 24px;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: transform 0.3s, background 0.3s;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .primary {
-  background: #1abc9c;
-  color: white;
+  background: #007aff;
+  color: #fff;
 }
 .secondary {
-  background: #3498db;
-  color: white;
+  background: #34c759; /* iOS green accent */
+  color: #fff;
 }
 .primary:hover {
-  background: #16a085;
-  transform: scale(1.05);
+  background: #0051a8;
+  transform: scale(1.03);
 }
 .secondary:hover {
-  background: #2980b9;
-  transform: scale(1.05);
+  background: #28a745;
+  transform: scale(1.03);
 }
 
 /* About and Info Sections */
@@ -138,23 +138,25 @@ nav {
   border-radius: 15px;
   margin: 30px auto;
   max-width: 800px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   text-align: center;
 }
 .about h2,
 .info-section h2 {
   font-size: 2em;
-  color: #2c3e50;
+  color: #333;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 .info-section ul {
   list-style: none;
   padding: 0;
-  font-size: 1.1em;
+  font-size: 1em;
   color: #555;
 }
 .info-section ul li {
   margin: 10px 0;
+  padding: 5px 0;
 }
 
 /* Projects Section */
@@ -164,16 +166,17 @@ nav {
   border-radius: 15px;
   margin: 30px auto;
   max-width: 1200px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   text-align: center;
 }
 .projects h2 {
   font-size: 2.2em;
-  color: #2c3e50;
+  color: #333;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 .section-description {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #555;
   margin-bottom: 30px;
 }
@@ -184,82 +187,84 @@ nav {
   gap: 20px;
 }
 .project {
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
   width: 320px;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  backdrop-filter: blur(10px);
 }
 .project:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 .project-info h3 {
-  color: #2c3e50;
-  font-size: 1.5em;
+  color: #333;
+  font-size: 1.4em;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 .project-info p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #555;
+  line-height: 1.5;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: #2c3e50;
-  color: #f4f4f4;
-  width: 100%;
+  background: black;
+  border-top: 1px solid #eaeaea;
+  color: #555;
 }
 
 /* Dark Mode Styles */
 body.dark-mode {
-  background: #2c3e50;
-  color: #ecf0f1; /* Base text color */
+  background: #1c1c1e;
+  color: #f4f4f4;
 }
 body.dark-mode header {
-  background: rgba(20, 20, 20, 0.9);
+  background: #2c2c2e;
 }
 body.dark-mode .hero {
-  background: rgba(20, 20, 20, 0.5);
+  background: #2c2c2e;
 }
 body.dark-mode .about,
 body.dark-mode .info-section,
 body.dark-mode .projects {
-  background: #34495e;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  background: #2c2c2e;
+  box-shadow: none;
 }
-
-/* Headings */
 body.dark-mode h1,
 body.dark-mode h2,
-body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6 {
-  color: darkkhaki;
+  color: white;
 }
-
-/* Paragraphs and list items */
 body.dark-mode p,
 body.dark-mode li {
   color: darkgray;
 }
+body.dark-mode h3{
+
+  color: black;
+}
+
 body.dark-mode .nav-links a {
-  color: white;
+  color: #f4f4f4;
 }
 body.dark-mode .nav-links a:hover {
-  color: white;
+  color: #0a84ff;
 }
 body.dark-mode .btn.primary {
-  background: black;
+  background: darkgray;
 }
 body.dark-mode .btn.secondary {
-  background: black;
+  background: darkgray;
 }
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -306,10 +311,11 @@ body.dark-mode .btn.secondary {
   }
   .nav-links {
     flex-direction: column;
-    background: rgba(44, 62, 80, 0.9);
+    background: rgba(44, 62, 80, 0.95);
     position: static;
     width: 100%;
     margin-top: 10px;
+    border-radius: 10px;
   }
   .nav-links li {
     margin: 10px 0;
